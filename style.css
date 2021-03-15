@@ -5,6 +5,7 @@ body {
 .container {
   height: 100vh;
   display: flex;
+  box-sizing: border-box;
 }
 
 .left-container,
@@ -12,15 +13,30 @@ body {
   padding: 0;
   height: 100%;
   flex: 0.1;
+  border: solid;
+}
+
+.left-container:hover .left,
+.right-container:hover .right {
+  transform: translate(0%);
 }
 
 .left,
 .right {
-  visibility: hidden;
-  border: solid;
-  background: none;
+  overflow: hidden;
+  background: #ddf;
+  opacity: 50%;
   height: 100%;
   width: 100%;
+  transition: transform 0.3s;
+}
+
+.left {
+  transform: translate(-100%);
+}
+
+.right {
+  transform: translate(100%);
 }
 
 .dot,
