@@ -1,24 +1,32 @@
 // Add test dots
 
-const dotContainer = document.querySelector(".position-container");
+const dotContainer = document.querySelector(".imgIndicator");
 
-const dotList = [];
+const imgList = [];
 
 // Test function
 
-function test() {
+function generatePictures() {
+  const images = [
+    { id: 1, src: "./assets/image01.jpg", title: "foo", description: "bar" },
+    { id: 2, src: "./assets/image02.jpg", title: "foo", description: "bar" },
+    { id: 3, src: "./assets/image03.jpg", title: "foo", description: "bar" },
+    { id: 4, src: "./assets/image04.jpg", title: "foo", description: "bar" },
+    { id: 5, src: "./assets/image05.jpg", title: "foo", description: "bar" },
+  ];
+  // do stuff
+}
+
+function generateDots() {
   let newImg;
   for (let i = 0; i < 10; i++) {
     newImg = document.createElement("button");
-    if (i == 0) {
-      newImg.className = "first-dot";
-    } else if (i == 9) {
-      newImg.className = "last-dot";
-    }
+
     newImg.classList.add("dot");
 
     dotContainer.appendChild(newImg);
   }
 }
 
-test();
+// call the tests
+generateDots();
